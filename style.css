@@ -799,4 +799,34 @@ textarea {
     padding: 15px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
+   /* =========================
+   BOUTON WHATSAPP
+========================= */
+
+.whatsapp-button {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 999;
+  padding: 14px 20px;
+  border-radius: 50px;
+  background: #25d366;
+  color: #ffffff;
+  font-weight: 800;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: 0.25s ease;
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-3px);
+  background: #1ebe5d;
+}
+
+@media (max-width: 650px) {
+  .whatsapp-button {
+    right: 15px;
+    bottom: 15px;
+    padding: 12px 17px;
+    font-size: 0.9rem;
+  }
 }
