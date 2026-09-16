@@ -1,10 +1,565 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Nexora Studio — création de sites vitrines modernes pour indépendants et petites entreprises."><title>Nexora Studio | Sites web modernes</title><link rel="stylesheet" href="style.css"></head><body>
-<header><a class="logo" href="#accueil"><span>N</span>NEXORA</a><button class="menu" aria-label="Menu">☰</button><nav><a href="#services">Services</a><a href="#portfolio">Réalisations</a><a href="#tarifs">Tarifs</a><a href="#apropos">À propos</a><a class="navcta" href="#contact">Parlons-en</a></nav></header>
-<main>
-<section id="accueil" class="hero"><div><p class="eyebrow">NEXORA STUDIO · WEB DESIGN</p><h1>Votre activité mérite une <em>présence en ligne</em> à la hauteur.</h1><p class="lead">Des sites vitrines modernes, rapides et adaptés aux smartphones pour les indépendants et petites entreprises.</p><div class="actions"><a class="btn primary" href="#contact">Demander un projet</a><a class="btn ghost" href="#portfolio">Voir les réalisations</a></div></div><div class="browser"><div class="dots">● ● ●</div><div class="mock"><small>NEXORA STUDIO</small><h3>Une image professionnelle.<br>Des clients mieux informés.</h3><div class="line"></div><div class="blocks"><i></i><i></i><i></i></div></div></div></section>
-<section id="services" class="section"><p class="eyebrow">NOS SERVICES</p><h2>Un site pensé pour votre activité.</h2><div class="grid three"><article><b>01</b><h3>Création</h3><p>Un site clair et professionnel pour présenter votre activité, vos services et vos coordonnées.</p></article><article><b>02</b><h3>Design</h3><p>Une identité moderne, une navigation simple et une expérience optimisée sur mobile.</p></article><article><b>03</b><h3>Maintenance</h3><p>Des modifications pour garder horaires, tarifs, photos et informations à jour.</p></article></div></section>
-<section id="portfolio" class="section dark"><p class="eyebrow">PORTFOLIO</p><h2>Des concepts qui donnent une identité à votre activité.</h2><p class="muted">Projets de démonstration fictifs.</p><div class="grid three"><article class="project p1"><div><small>01 / BARBER</small><h3>Barber District</h3><p>Identité premium.</p></div></article><article class="project p2"><div><small>02 / BEAUTY</small><h3>Maison Élégance</h3><p>Univers haut de gamme.</p></div></article><article class="project p3"><div><small>03 / ARTISAN</small><h3>Atelier Nova</h3><p>Image authentique.</p></div></article></div></section>
-<section id="tarifs" class="section"><p class="eyebrow">OFFRES</p><h2>Des formules simples.</h2><div class="grid three prices"><article><small>ESSENTIEL</small><strong>199€</strong><p>Pour démarrer.</p><ul><li>1 page</li><li>Responsive</li><li>Services & coordonnées</li><li>Réseaux sociaux</li></ul><a class="btn ghost darkbtn" href="#contact">Choisir</a></article><article class="featured"><small>PRO · RECOMMANDÉ</small><strong>299€</strong><p>Pour les petites entreprises.</p><ul><li>Jusqu'à 5 pages</li><li>Design personnalisé</li><li>Formulaire de contact</li><li>Galerie & réseaux sociaux</li><li>Optimisation mobile</li></ul><a class="btn primary black" href="#contact">Choisir</a></article><article><small>PREMIUM</small><strong>499€</strong><p>Pour un projet plus complet.</p><ul><li>Jusqu'à 7 pages</li><li>Design sur mesure</li><li>Animations</li><li>Galerie avancée</li><li>Accompagnement</li></ul><a class="btn ghost darkbtn" href="#contact">Choisir</a></article></div><p class="note">Maintenance facultative : <b>29€/mois</b>.</p></section>
-<section id="apropos" class="about"><div><p class="eyebrow">À PROPOS</p><h2>Mon objectif : mettre votre activité sous son meilleur jour.</h2></div><p>Nexora Studio accompagne les indépendants et petites entreprises dans la création de leur présence en ligne. L'approche privilégie les sites modernes, lisibles et adaptés aux besoins réels des clients.</p></section>
-<section id="contact" class="section contact"><p class="eyebrow">CONTACT</p><h2>Parlons de votre projet.</h2><p class="muted">Décrivez votre besoin. Le bouton ouvrira votre messagerie avec un message prérempli.</p><form id="form"><input id="name" required placeholder="Votre nom / entreprise"><input id="email" type="email" required placeholder="Votre adresse e-mail"><select id="offer" required><option value="">Choisissez une offre</option><option>Essentiel — 199€</option><option>Pro — 299€</option><option>Premium — 499€</option><option>Je ne sais pas encore</option></select><textarea id="message" required rows="6" placeholder="Parlez-nous de votre activité et de votre projet..."></textarea><button class="btn primary black" type="submit">Envoyer ma demande</button></form></section>
-</main><footer><div><a class="logo" href="#accueil"><span>N</span>NEXORA</a><p>Sites web modernes pour petites entreprises.</p></div><p>© <span id="year"></span> Nexora Studio</p></footer><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nexora Studio | Création de sites web professionnels</title>
+
+  <meta name="description" content="Nexora Studio crée des sites web modernes, professionnels et adaptés aux entreprises, indépendants et commerces.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav">
+
+      <a href="#accueil" class="logo">
+        NEXORA<span>.</span>
+      </a>
+
+      <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#apropos">À propos</a>
+        <a href="#contact" class="nav-button">Parler du projet</a>
+      </nav>
+
+      <button class="menu" aria-label="Menu">
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero" id="accueil">
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+
+          <div class="badge">
+            <span></span>
+            Studio web indépendant
+          </div>
+
+          <h1>
+            Votre activité mérite
+            <strong>une présence en ligne à la hauteur.</strong>
+          </h1>
+
+          <p>
+            Nous créons des sites web modernes, élégants et adaptés
+            à votre activité pour vous aider à gagner en visibilité
+            et inspirer confiance à vos clients.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#contact" class="button primary">
+              Parler de votre projet →
+            </a>
+
+            <a href="#realisations" class="button secondary">
+              Voir nos réalisations
+            </a>
+          </div>
+
+          <div class="trust">
+            <div>
+              <strong>✓</strong>
+              Design sur mesure
+            </div>
+
+            <div>
+              <strong>✓</strong>
+              Mobile & ordinateur
+            </div>
+
+            <div>
+              <strong>✓</strong>
+              Accompagnement
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- MOCKUP -->
+        <div class="hero-visual">
+
+          <div class="browser">
+
+            <div class="browser-top">
+              <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <div class="address">
+                nexora-studio.fr
+              </div>
+            </div>
+
+            <div class="browser-content">
+
+              <div class="mock-logo">
+                NEXORA<span>.</span>
+              </div>
+
+              <div class="mock-title">
+                Une présence digitale
+                <br>
+                <strong>qui vous ressemble.</strong>
+              </div>
+
+              <div class="mock-line"></div>
+
+              <div class="mock-cards">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+
+      <div class="container">
+
+        <div class="section-heading">
+          <span>CE QUE NOUS FAISONS</span>
+          <h2>Un site pensé pour votre activité.</h2>
+          <p>
+            De la conception au lancement, nous créons une présence
+            digitale claire, moderne et professionnelle.
+          </p>
+        </div>
+
+
+        <div class="services-grid">
+
+          <article class="service-card">
+            <div class="service-number">01</div>
+            <h3>Création de site</h3>
+            <p>
+              Un site professionnel conçu pour présenter votre activité,
+              vos services et permettre à vos clients de vous contacter.
+            </p>
+            <a href="#contact">En savoir plus →</a>
+          </article>
+
+
+          <article class="service-card">
+            <div class="service-number">02</div>
+            <h3>Design responsive</h3>
+            <p>
+              Une expérience adaptée aux smartphones, tablettes
+              et ordinateurs pour ne perdre aucun visiteur.
+            </p>
+            <a href="#contact">En savoir plus →</a>
+          </article>
+
+
+          <article class="service-card">
+            <div class="service-number">03</div>
+            <h3>Optimisation</h3>
+            <p>
+              Une structure claire et professionnelle pour améliorer
+              votre image et faciliter la prise de contact.
+            </p>
+            <a href="#contact">En savoir plus →</a>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- REALISATIONS -->
+    <section class="section dark-section" id="realisations">
+
+      <div class="container">
+
+        <div class="section-heading">
+          <span>NOS RÉALISATIONS</span>
+          <h2>Des concepts pensés pour être remarqués.</h2>
+          <p>
+            Découvrez quelques exemples de projets imaginés par
+            Nexora Studio.
+          </p>
+        </div>
+
+
+        <div class="projects-grid">
+
+          <article class="project">
+
+            <div class="project-image barber">
+              <div class="project-screen">
+                BARBER<br>
+                <strong>DISTRICT</strong>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div>
+                <small>CONCEPT · BARBER</small>
+                <h3>Barber District</h3>
+              </div>
+
+              <span>↗</span>
+            </div>
+
+          </article>
+
+
+          <article class="project">
+
+            <div class="project-image elegance">
+              <div class="project-screen">
+                MAISON<br>
+                <strong>ÉLÉGANCE</strong>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div>
+                <small>CONCEPT · BEAUTÉ</small>
+                <h3>Maison Élégance</h3>
+              </div>
+
+              <span>↗</span>
+            </div>
+
+          </article>
+
+
+          <article class="project">
+
+            <div class="project-image nova">
+              <div class="project-screen">
+                ATELIER<br>
+                <strong>NOVA</strong>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div>
+                <small>CONCEPT · ARTISAN</small>
+                <h3>Atelier Nova</h3>
+              </div>
+
+              <span>↗</span>
+            </div>
+
+          </article>
+
+        </div>
+
+        <p class="demo-note">
+          * Exemples de concepts réalisés à titre de démonstration.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- TARIFS -->
+    <section class="section" id="tarifs">
+
+      <div class="container">
+
+        <div class="section-heading">
+          <span>NOS OFFRES</span>
+          <h2>Un tarif adapté à votre projet.</h2>
+          <p>
+            Des formules simples et transparentes pour lancer votre présence en ligne.
+          </p>
+        </div>
+
+
+        <div class="pricing-grid">
+
+          <article class="price-card">
+
+            <small>ESSENTIEL</small>
+
+            <h3>199€</h3>
+
+            <p class="price-description">
+              Pour présenter simplement votre activité.
+            </p>
+
+            <ul>
+              <li>✓ Site one-page</li>
+              <li>✓ Design professionnel</li>
+              <li>✓ Adapté mobile</li>
+              <li>✓ Services & contact</li>
+              <li>✓ Liens réseaux sociaux</li>
+            </ul>
+
+            <a href="#contact" class="price-button">
+              Choisir cette offre
+            </a>
+
+          </article>
+
+
+          <article class="price-card featured">
+
+            <div class="popular">
+              LE PLUS CHOISI
+            </div>
+
+            <small>PRO</small>
+
+            <h3>299€</h3>
+
+            <p class="price-description">
+              Pour une présence digitale complète.
+            </p>
+
+            <ul>
+              <li>✓ Jusqu'à 5 pages</li>
+              <li>✓ Design personnalisé</li>
+              <li>✓ Formulaire de contact</li>
+              <li>✓ Galerie / réseaux sociaux</li>
+              <li>✓ Optimisation mobile</li>
+            </ul>
+
+            <a href="#contact" class="price-button">
+              Choisir cette offre
+            </a>
+
+          </article>
+
+
+          <article class="price-card">
+
+            <small>PREMIUM</small>
+
+            <h3>499€</h3>
+
+            <p class="price-description">
+              Pour une expérience plus complète et avancée.
+            </p>
+
+            <ul>
+              <li>✓ Jusqu'à 7 pages</li>
+              <li>✓ Design sur mesure</li>
+              <li>✓ Animations</li>
+              <li>✓ Galerie avancée</li>
+              <li>✓ Accompagnement au lancement</li>
+            </ul>
+
+            <a href="#contact" class="price-button">
+              Choisir cette offre
+            </a>
+
+          </article>
+
+        </div>
+
+
+        <div class="maintenance">
+          <strong>Maintenance & accompagnement</strong>
+          <span>29€ / mois</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- A PROPOS -->
+    <section class="section about-section" id="apropos">
+
+      <div class="container about-grid">
+
+        <div>
+          <span class="section-label">À PROPOS DE NEXORA</span>
+
+          <h2>
+            Votre activité mérite plus
+            qu'un simple site.
+          </h2>
+        </div>
+
+        <div>
+          <p>
+            Nexora Studio accompagne les indépendants, commerces
+            et petites entreprises dans la création de leur présence
+            digitale.
+          </p>
+
+          <p>
+            Notre objectif est simple : créer des sites modernes,
+            professionnels et accessibles qui donnent envie à vos
+            visiteurs de découvrir votre activité.
+          </p>
+
+          <a href="#contact" class="text-link">
+            Parlons de votre projet →
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+
+      <div class="container contact-grid">
+
+        <div class="contact-text">
+
+          <span>UN PROJET ?</span>
+
+          <h2>
+            Parlons de votre
+            <strong>activité.</strong>
+          </h2>
+
+          <p>
+            Expliquez-nous votre projet et nous vous répondrons
+            rapidement pour discuter de vos besoins.
+          </p>
+
+          <div class="contact-email">
+            <small>EMAIL</small>
+            <a href="mailto:damien.nicolas087@gmail.com">
+              damien.nicolas087@gmail.com
+            </a>
+          </div>
+
+        </div>
+
+
+        <form id="form" class="contact-form">
+
+          <div class="form-group">
+            <label for="name">Nom / entreprise</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Votre nom ou entreprise"
+              required
+            >
+          </div>
+
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="vous@email.com"
+              required
+            >
+          </div>
+
+
+          <div class="form-group">
+            <label for="offer">Votre besoin</label>
+
+            <select id="offer" required>
+              <option value="">Sélectionnez une offre</option>
+              <option value="Essentiel — 199€">Essentiel — 199€</option>
+              <option value="Pro — 299€">Pro — 299€</option>
+              <option value="Premium — 499€">Premium — 499€</option>
+              <option value="Je ne sais pas encore">Je ne sais pas encore</option>
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+            <label for="message">Votre projet</label>
+
+            <textarea
+              id="message"
+              rows="5"
+              placeholder="Parlez-nous de votre activité et de votre projet..."
+              required
+            ></textarea>
+
+          </div>
+
+
+          <button type="submit" class="button primary full">
+            Envoyer ma demande →
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container footer-content">
+
+      <div>
+        <div class="logo">
+          NEXORA<span>.</span>
+        </div>
+
+        <p>
+          Création de sites web professionnels.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Nexora Studio</span>
+      <span>Design & développement web</span>
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
