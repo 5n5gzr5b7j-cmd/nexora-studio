@@ -776,4 +776,27 @@ textarea {
   .footer-links {
     flex-wrap: wrap;
   }
+   /* =========================
+   MENU MOBILE
+========================= */
+
+@media (max-width: 900px) {
+  .navigation.open {
+    display: flex;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 15px 5%;
+    background: rgba(7, 9, 13, 0.98);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .navigation.open a {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
 }
