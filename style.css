@@ -850,3 +850,16 @@ textarea {
 .project-card:hover .demo-warning {
   color: #ffffff;
 }
+   .demo-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #4da3ff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.demo-link:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
