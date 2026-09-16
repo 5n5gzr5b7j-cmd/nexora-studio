@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Barber District — Barber Shop</title>
+  <meta
+    name="description"
+    content="Barber District — Coupe, barbe et soins pour homme."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .header-inner {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      color: #b8b8b8;
+      font-size: .9rem;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .header-button {
+      background: #fff;
+      color: #111;
+      padding: 11px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .hero {
+      min-height: 720px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(0,0,0,.48), rgba(0,0,0,.78)),
+        radial-gradient(circle at 75% 35%, #343434, transparent 35%),
+        linear-gradient(135deg, #191919, #080808);
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #c8a96b;
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3.2rem, 8vw, 6.5rem);
+      line-height: .98;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 590px;
+      color: #c1c1c1;
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50px;
+      padding: 0 23px;
+      border-radius: 6px;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .button-primary {
+      background: #fff;
+      color: #0b0b0b;
+    }
+
+    .button-secondary {
+      border: 1px solid rgba(255,255,255,.25);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-dark {
+      background: #101010;
+    }
+
+    .section-title {
+      margin-bottom: 45px;
+    }
+
+    .section-title span {
+      color: #c8a96b;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      margin-top: 12px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.1;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: #151515;
+    }
+
+    .service h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .service p {
+      color: #929292;
+    }
+
+    .price {
+      margin-top: 22px;
+      color: #c8a96b;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 420px;
+      background:
+        linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.7)),
+        linear-gradient(135deg, #343434, #121212);
+      display: flex;
+      align-items: end;
+      padding: 30px;
+    }
+
+    .about-image strong {
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+    }
+
+    .about-text p {
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    .contact {
+      background: #0a0a0a;
+    }
+
+    .contact-box {
+      padding: 50px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: #121212;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: #999;
+      margin-bottom: 28px;
+    }
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: #737373;
+      text-align: center;
+      font-size: .85rem;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        display: none;
+      }
+
+      .header-button {
+        display: none;
+      }
+
+      .services,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 650px;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .contact-box {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+
+    <a href="#" class="logo">
+      BARBER DISTRICT
+    </a>
+
+    <nav>
+      <a href="#prestations">Prestations</a>
+      <a href="#apropos">Le barber</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="header-button">
+      Prendre rendez-vous
+    </a>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+
+        <span class="eyebrow">
+          Barber Shop • Paris
+        </span>
+
+        <h1>
+          Le style<br>
+          commence ici.
+        </h1>
+
+        <p>
+          Coupes modernes, taille de barbe et soins personnalisés.
+          Un espace pensé pour les hommes qui veulent un style précis,
+          élégant et maîtrisé.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="button button-primary">
+            Prendre rendez-vous
+          </a>
+
+          <a href="#prestations" class="button button-secondary">
+            Découvrir nos prestations
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="prestations">
+    <div class="container">
+
+      <div class="section-title">
+        <span>Nos prestations</span>
+        <h2>Des services pensés pour votre style.</h2>
+      </div>
+
+      <div class="services">
+
+        <article class="service">
+          <h3>Coupe classique</h3>
+          <p>
+            Coupe personnalisée, finitions précises et coiffage.
+          </p>
+          <div class="price">25 €</div>
+        </article>
+
+        <article class="service">
+          <h3>Coupe + barbe</h3>
+          <p>
+            Une coupe complète accompagnée d'une taille de barbe.
+          </p>
+          <div class="price">35 €</div>
+        </article>
+
+        <article class="service">
+          <h3>Barbe premium</h3>
+          <p>
+            Taille, contours et soin pour une barbe parfaitement structurée.
+          </p>
+          <div class="price">20 €</div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="apropos" class="section-dark">
+    <div class="container">
+
+      <div class="about-grid">
+
+        <div class="about-image">
+          <strong>Precision.<br>Style.<br>Character.</strong>
+        </div>
+
+        <div class="about-text">
+
+          <div class="section-title">
+            <span>Le barber</span>
+            <h2>Un style qui vous ressemble.</h2>
+          </div>
+
+          <p>
+            Barber District accompagne chaque client avec une approche
+            personnalisée et une attention particulière portée aux détails.
+          </p>
+
+          <p>
+            Notre objectif : proposer une expérience simple, élégante
+            et professionnelle, de l'accueil jusqu'à la dernière finition.
+          </p>
+
+          <a href="#contact" class="button button-primary">
+            Réserver une séance
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+
+      <div class="contact-box">
+
+        <h2>Prêt pour votre prochain look ?</h2>
+
+        <p>
+          Réservez votre créneau et venez découvrir Barber District.
+        </p>
+
+        <a
+          href="https://wa.me/33612345678"
+          class="button button-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Réserver sur WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    Barber District — Concept de démonstration créé par Nexora Studio.
+  </div>
+</footer>
+
+</body>
+</html>
