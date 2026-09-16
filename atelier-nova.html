@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Atelier Nova — Artisan & Création</title>
+  <meta
+    name="description"
+    content="Atelier Nova — Création artisanale, savoir-faire et projets sur mesure."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: #f2f0eb;
+      color: #1d211f;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(242, 240, 235, 0.93);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid #d9d5cc;
+    }
+
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      color: #646a66;
+      font-size: .9rem;
+    }
+
+    nav a:hover {
+      color: #1d211f;
+    }
+
+    .header-button {
+      padding: 11px 18px;
+      background: #1d211f;
+      color: #fff;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .hero {
+      min-height: 720px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 80% 25%, #cfd5c9, transparent 35%),
+        linear-gradient(135deg, #f2f0eb, #e3e5df);
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      color: #687660;
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2 {
+      font-family: "Playfair Display", serif;
+    }
+
+    .hero h1 {
+      margin-top: 18px;
+      font-size: clamp(3.2rem, 7vw, 6.2rem);
+      line-height: .98;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 610px;
+      color: #646a66;
+      font-size: 1.05rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50px;
+      padding: 0 23px;
+      border-radius: 6px;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-dark {
+      background: #1d211f;
+      color: #fff;
+    }
+
+    .button-light {
+      border: 1px solid #c6c9c2;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-dark {
+      background: #1d211f;
+      color: #fff;
+    }
+
+    .section-title {
+      margin-bottom: 45px;
+    }
+
+    .section-title span {
+      color: #91a487;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      margin-top: 12px;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1.1;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      padding: 30px;
+      background: #faf9f6;
+      border: 1px solid #ddd9d0;
+    }
+
+    .service h3 {
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      color: #717670;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      min-height: 280px;
+      padding: 25px;
+      display: flex;
+      align-items: end;
+      background: #303630;
+      color: #fff;
+    }
+
+    .project:nth-child(2) {
+      background: #596255;
+    }
+
+    .project:nth-child(3) {
+      background: #767d70;
+    }
+
+    .project strong {
+      font-family: "Playfair Display", serif;
+      font-size: 1.8rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 430px;
+      background:
+        linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.55)),
+        linear-gradient(135deg, #7b8479, #293029);
+    }
+
+    .about-text p {
+      color: #b8beb9;
+      margin-bottom: 20px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-box {
+      padding: 55px 30px;
+      background: #d9ded4;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: #626960;
+      margin-bottom: 25px;
+    }
+
+    footer {
+      padding: 30px 0;
+      background: #111512;
+      color: #9ea59f;
+      text-align: center;
+      font-size: .85rem;
+    }
+
+    @media (max-width: 800px) {
+      nav,
+      .header-button {
+        display: none;
+      }
+
+      .services,
+      .projects,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+
+    <a href="#" class="logo">
+      ATELIER NOVA
+    </a>
+
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#projets">Réalisations</a>
+      <a href="#atelier">L'atelier</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="header-button">
+      Demander un projet
+    </a>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container">
+
+      <div class="hero-content">
+
+        <span class="eyebrow">
+          Artisanat • Création sur mesure
+        </span>
+
+        <h1>
+          Le savoir-faire<br>
+          prend forme.
+        </h1>
+
+        <p>
+          Atelier Nova imagine et réalise des créations sur mesure
+          avec une attention particulière portée aux matières,
+          aux détails et à la qualité.
+        </p>
+
+        <div class="actions">
+          <a href="#contact" class="button button-dark">
+            Parlons de votre projet
+          </a>
+
+          <a href="#projets" class="button button-light">
+            Voir nos réalisations
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="services">
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>Notre expertise</span>
+        <h2>Des créations pensées pour durer.</h2>
+      </div>
+
+      <div class="services">
+
+        <article class="service">
+          <h3>Création sur mesure</h3>
+          <p>
+            Des projets conçus selon vos dimensions, vos besoins
+            et votre univers.
+          </p>
+        </article>
+
+        <article class="service">
+          <h3>Rénovation</h3>
+          <p>
+            Donner une nouvelle vie à vos pièces existantes
+            grâce à un travail précis et soigné.
+          </p>
+        </article>
+
+        <article class="service">
+          <h3>Conseil & conception</h3>
+          <p>
+            Un accompagnement de la première idée jusqu'à la
+            réalisation finale de votre projet.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="projets" class="section-dark">
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>Réalisations</span>
+        <h2>Quelques projets imaginés par l'atelier.</h2>
+      </div>
+
+      <div class="projects">
+
+        <article class="project">
+          <strong>Collection Maison</strong>
+        </article>
+
+        <article class="project">
+          <strong>Projet Signature</strong>
+        </article>
+
+        <article class="project">
+          <strong>Pièce Unique</strong>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="atelier" class="section-dark">
+
+    <div class="container">
+
+      <div class="about-grid">
+
+        <div class="about-image"></div>
+
+        <div class="about-text">
+
+          <div class="section-title">
+            <span>L'atelier</span>
+            <h2>Chaque détail compte.</h2>
+          </div>
+
+          <p>
+            Atelier Nova place le savoir-faire et la précision
+            au centre de chaque réalisation.
+          </p>
+
+          <p>
+            De la conception aux dernières finitions, chaque projet
+            bénéficie d'une approche personnalisée et attentive.
+          </p>
+
+          <a href="#contact" class="button button-light">
+            Présenter mon projet
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="contact" class="contact">
+
+    <div class="container">
+
+      <div class="contact-box">
+
+        <h2>Parlons de votre projet.</h2>
+
+        <p>
+          Expliquez-nous votre idée et imaginons ensemble sa réalisation.
+        </p>
+
+        <a href="#" class="button button-dark">
+          Nous contacter
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  Atelier Nova — Concept de démonstration créé par Nexora Studio.
+</footer>
+
+</body>
+</html>
